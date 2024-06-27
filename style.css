@@ -1,0 +1,400 @@
+body{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+hr{
+    width: 80%;
+    margin: 20px auto;
+    border-top: 1px solid #ccc;
+}
+h1,h2{
+    font-weight: 700;
+}
+p,a{
+    font-weight: 450;
+}
+a{
+    color: #007bff;
+    text-decoration: none;
+    display: inline-block;
+    margin: 5px 0;
+}
+a:hover{
+    color: #0056b3;
+}
+.fas, .fab{
+margin-right: 1px;
+color: inherit;
+}
+
+.icon-link{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 24px;
+    transition: transform 0.3s ease;
+}
+
+.email-icon{
+    background-color: #d33a26;
+}
+.linkedin-icon{
+    background-color: #0e76a8;
+}
+.insta-icon {
+    background: #b46007; 
+}
+.github-icon{
+    background-color:#413b3b;
+}
+.icon-link:hover{
+    transform: scale(1.1);
+    color: #fff;
+}
+
+    header, footer{
+        background: linear-gradient(to right, #f5f5dc, #A9A9A9);
+        color: #fff;
+        padding: 40px 0;
+        text-align: center;
+    }
+
+section{
+    padding: 20px;
+    text-align: center;
+    width: 80%;
+    max-width: 100%;
+}
+
+img{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    object-fit: cover;
+}
+    .skills-list{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 30px;
+    }
+
+.skills-list li{
+    list-style-type: none;
+    background: #A9A9A9;
+    padding: 10px 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    animation: bounce 1s infinite alternate;/*apply bounce animation*/
+}
+
+
+form{
+    margin: 20px auto;
+    padding: 20px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    background: #fff;
+    color: #333;
+    box-sizing: border-box;
+    border-radius: 5%;
+    
+}
+
+.form-group{ 
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 0px;
+}
+
+.form-group label{
+    margin-bottom: 5px;
+}
+
+form input[type="text"], form input[type="email"], form textarea, form button{
+    width: 90%;
+    padding: 8px;
+    border: 2px solid #ccc;
+    border-radius: 15px;
+    margin: 2px 0 8px 0;
+}
+
+form button{
+background-image: linear-gradient(to right,  #f5f5dc, #A9A9A9);
+color: #fff;
+border: none;
+border-radius: 15px;
+cursor: pointer;
+font-size: 18px;
+}
+form button:hover{
+    background-image: linear-gradient(to right,#A9A9A9, #f5f5dc);
+}
+@media only screen and (max-width: 768px){
+.skills-list{
+    flex-direction: column;
+}
+}
+@media only screen and (max-width: 768px){
+    header, footer{
+        padding: 15px;
+    }
+    section, form{
+width: calc(100% - 20px);
+margin: 10px auto;
+    }
+    .icon-link{
+        width: 40px;
+        height: 40px;
+        margin: 0 5px;
+    }
+    h1, h2{
+        font-size: 16px;
+    }
+}
+
+@keyframes bounce{
+    from{
+        transform: translateY(0);
+    }
+    to{
+        transform: translateY(-10px);
+    }
+}
+
+.horizontal-scroll{
+    overflow-x: hidden;/*hide any overflow content*/
+    width: 100%;/*occupy full width*/
+}
+.icon-container{
+    display: flex;/*display icon in a row*/
+    animation: scrollAnimation 10s linear infinite;
+    width: max-content;/*make the container width fit its content*/
+}
+.icon-container img{
+    width: 60px;
+    height: 60px;/*adjusts height of icons*/
+    margin-right: 20px;/*adjusts margin between icons*/
+}
+@keyframes scrollAnimation {
+    0%{
+        transform: translateX(100vw);/*start from the right  edge of the viewport*/
+    
+    }
+    100%{
+        transform: translateX(-100%);/*move to the left*/
+    }
+}
+
+/*CSS for dark mode*/
+.dark-mode{
+    background-color: #333;
+    color: #fff;
+}
+.dark-mode button{
+    background-color: #555;
+    color: #fff;
+    
+}
+/* .dark-mode button:hover{
+    transform: scale(1.1);
+} */
+.dark-mode p{
+    color: #fff;
+}
+/*-------------CSS for dark mode------------------------*/
+#programming-languages {
+    margin-top: 50px;
+}
+#programming-languages .skill{
+    margin-bottom: 20px;
+}
+#programming-languages .progress-bar {
+    width: 0;
+    height: 20px;
+    background: linear-gradient(to right,#A9A9A9, #dbdb10);
+    border-radius: 10px;
+    --progress: 0%;
+    transition: width 1s ease-in-out;
+}
+#programming-languages .progress-bar.animated {
+    width: var(--progress);
+}
+#programming-languages .progress {
+    height: 100%;
+    border-radius: 10px;
+    background-color: transparent;
+}
+
+/*Nav menu*/
+.navbar{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    /* background-color: #fff; */
+    background: linear-gradient(to right,  #f5f5f5, #d9d9d9);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 20px 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+
+.navbar-container{
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+}
+
+
+.nav-logo img{
+    height: 80px;
+    width: auto;
+    border: none; 
+     border-radius: 5;
+     box-shadow: none;
+}
+.nav-logo :hover{
+    transform: scale(1.1);
+
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-grow: 1;
+    justify-content: flex-end;
+  }
+  
+  .nav-menu a, .nav-menu .resume-button {
+    text-decoration: none;
+    color: #333;
+    padding: 0.5rem 1rem;
+    border-radius: 5%;
+    background-color: #d4c5b6;
+  }
+  
+  .nav-menu a:hover {
+    transform: scale(1.1);
+  }
+  
+  .resume-button {
+    color: #fff;
+  }
+  
+  .resume-button:hover {
+    transform: scale(1.1);
+  }
+  
+  .nav-toggle {
+    display: none;
+    cursor: pointer;
+  }
+  
+  .nav-toggle i {
+    font-size: 24px;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .nav-menu {
+      flex-direction: column;
+      width: 100%;
+      display: none;
+    }
+  
+    .nav-menu.show {
+      display: flex;
+    }
+  
+    .nav-toggle {
+      display: block;
+      margin-left: auto;
+    }
+  }
+  /* Add your existing CSS styles here */
+
+.dark-mode .navbar {
+    background-color: #333;
+    box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
+  }
+  
+  .dark-mode .nav-menu a, .dark-mode .nav-menu .resume-button {
+    background-color: #fff;
+    color: #333;
+  }
+  
+  .dark-mode .nav-menu a:hover, .dark-mode .nav-menu .resume-button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+  }
+
+  /* Your existing CSS styles */
+
+.dark-mode-toggle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #555;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dark-mode-toggle:hover {
+    background-color: #777;
+    transform: scale(1.1);
+}
+
+.dark-mode .dark-mode-toggle {
+    background-color: #fff;
+    color: #333;
+}
+
+.dark-mode .dark-mode-toggle:hover {
+    background-color: #ccc;
+    transform: scale(1.1);
+  }
+  
+  @media (max-width: 768px) {
+    section, form {
+      text-align: center;
+    }
+  }
+  @media (max-width: 768px) {
+    .horizontal-scroll {
+      display: flex;
+      justify-content: center;
+    }
+  }
+  @media (max-width: 768px) {
+    .skills-list {
+      justify-content: center;
+    }
+  }
+  @media (max-width: 768px) {
+    form {
+      margin: 10px auto;
+      justify-content: center;
+      display: flex;
+    }
+  }
